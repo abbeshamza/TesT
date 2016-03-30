@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Ceci se passe de commentaire.
+-->
+<html ng-app="App" >
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta http-equiv="Content-Language" content="fr" />
+ <meta name="Hamza" content="test angular" />
+ <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+
+ <title>
+Angular
+ </title>
+</head>
+<body layout="column">
+
+<md-toolbar> <h1>Automatisation des tests fonctionnels </h1> </md-toolbar>
+
+
+<div class="container" layout="row" flex>
+ <md-sidebav md-is-locked-open="true" class="md-whiteframe-4dp">nav</md-sidebav>
+   <md-list-item>
+    <md-button>
+     <md-icon md-svg-src="svg/avatar-1.svg" class=""/>
+    </md-button>
+   </md-list-item>
+
+
+
+ <md-content id="content" flex >content</md-content>
+</div>
+
+
+
+ <div ng-view>
+
+ </div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<script type="text/javascript"  src="node_modules/angular-animate/angular-animate.js"></script>
+<script type="text/javascript"  src="node_modules/angular-aria/angular-aria.js"></script>
+<script type="text/javascript"  src="node_modules/angular-material/angular-material.js"></script>
+ <script type="text/javascript" src="assets/js/jquery.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+ <script type="text/javascript" src="app.js"></script>
+  <script src="//cdn.jsdelivr.net/underscorejs/1.5.1/underscore.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.3.1/restangular.js"></script>
+
+ <script type="text/javascript" src="src/projects/controllers/ProjectController.js"></script>
+ <script type="text/javascript" src="src/projects/factories/ProjectFactory.js"></script>
+ 
+</body>
+</html>
