@@ -1,15 +1,29 @@
 (function(){
 var ProjectsFactory = function(Restangular, $q){
 	var factory = {};
-	factory.getFactory = function ()
+	factory.getAll = function ()
 	{
-		return Restangular.one('projects',9).get()
+		return Restangular.all('projects').get()
 		.then(function (response) {
-                        return response.data;
-                    }, function (fallback) {
-                        return $q.reject(fallback);
+			console.log(response);
+                        return response;
+                    }, function () {
+                        console.log("Internal Error");
                     });
 	}
+
+	factory.getOne = function ($id)
+	{
+
+		return Restangular.one('projects',$id).get()
+			.then(function (response) {
+				return response.data;
+			}, function (response) {
+				console.log(response.data.container);
+			});
+	}
+
+
 	return factory ;
 }
 ProjectsFactory.$inject=['Restangular', '$q'];
