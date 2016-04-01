@@ -1,0 +1,19 @@
+
+<div flex ="30">
+    <h3>Projects</h3>
+    <ul>
+        <div ng-controller="ListProjectsController" class="lock-size" layout="row" layout-align="center center">
+            <md-fab-speed-dial md-open="demo.isOpen" md-direction="down" ng-class="demo.selectedMode">
+                <md-fab-trigger>
+                    <md-button aria-label="menu" class="md-fab md-warn">
+                    </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button ng-repeat="projet in listProjects" aria-label="" class="md-fab md-raised ">
+                        {{projet.nameProject}}
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+        </div>
+    </ul>
+</div>

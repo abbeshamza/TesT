@@ -1,10 +1,11 @@
 (function(){
     var ListProjectsController = function($scope,$log,ProjectsFactory)
     {
+        $scope.listProjects=null;
         function all()
         {
             ProjectsFactory.getAll().then(function (response) {
-                return  $scope.projects = response;
+                return  $scope.listProjects = response;
             }, function (fallback) {
                 return $q.reject(fallback);
             });

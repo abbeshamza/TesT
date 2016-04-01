@@ -3,13 +3,16 @@ var ProjectsFactory = function(Restangular, $q){
 	var factory = {};
 	factory.getAll = function ()
 	{
-		return Restangular.all('projects').get()
+		var res  = [];
+
+		res  = Restangular.all('projects').getList("")
 		.then(function (response) {
 			console.log(response);
                         return response;
                     }, function () {
                         console.log("Internal Error");
                     });
+		return res;
 	}
 
 	factory.getOne = function ($id)
