@@ -1,11 +1,20 @@
-var App=angular.module('App',['ngRoute','restangular','ngMaterial'])
+var App=angular.module('App',['ngRoute','restangular','ngMaterial','ngMdIcons'])
 	.run(function(){
 		console.log("app is running")
 	});
-App.config(function($routeProvider,RestangularProvider)
+App.config(function($routeProvider,RestangularProvider,$mdIconProvider,$mdThemingProvider)
 {
 	console.log('A gets initialized its Restangular configuration');
     RestangularProvider.setBaseUrl('http://127.0.0.1:8000/rest/');
+
+
+	$mdThemingProvider.theme('default')
+		.primaryPalette('blue')
+		.accentPalette('red');
+	$mdIconProvider.icon('menu','assets/img/menu.svg',24);
+
+
+
 
 
 	RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
@@ -21,6 +30,10 @@ App.config(function($routeProvider,RestangularProvider)
 
 
 	$routeProvider
+	.when('/home',{
+		controller : 'MainController',
+		templateUrl: 'src/home/views/home.html'
+	})
 	.when('/projects/:id',{
 		controller : 'ProjectController',
 		templateUrl: 'src/projects/views/setting.html'

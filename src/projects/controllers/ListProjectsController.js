@@ -1,5 +1,5 @@
 (function(){
-    var ListProjectsController = function($scope,$log,ProjectsFactory)
+    var ListProjectsController = function($scope,$log,ProjectsFactory,$rootScope)
     {
         $scope.listProjects=null;
         function all()
@@ -13,7 +13,7 @@
         all();
 
     };
-    ListProjectsController.$inject=['$scope','$log','ProjectsFactory'];
+    ListProjectsController.$inject=['$scope','$log','ProjectsFactory','$rootScope'];
     angular.module('App').controller('ListProjectsController',ListProjectsController);
 }
 ());
