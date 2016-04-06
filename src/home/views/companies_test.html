@@ -1,0 +1,22 @@
+
+<md-card  flex ng-if="selectedProject != null">
+    <md-card-content>
+        <h3>the name of the project is</h3> {{selectedProject.nameProject}}
+        <h3>the status of the project is </h3>{{selectedProject.status}}
+    </md-card-content>
+
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-raised md-primary md-cornered">Update</md-button>
+        <md-button class="md-raised md-primary md-cornered">Change name</md-button>
+        <md-button class="md-raised md-primary md-cornered">Close/Open</md-button>
+        <md-button class="md-raised md-warn md-cornered">Remove</md-button>
+    </md-card-actions>
+</md-card>
+
+
+<md-card ng-if="selectedProject == null">
+    <md-card-content>
+        <h1> No Project is selected !</h1>
+
+    </md-card-content>
+    </md-card>

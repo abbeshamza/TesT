@@ -12,7 +12,7 @@ App.config(function($routeProvider,RestangularProvider,$mdIconProvider,$mdThemin
 		.primaryPalette('blue')
 		.accentPalette('red');
 	$mdIconProvider.icon('menu','assets/img/menu.svg',24);
-
+	$mdIconProvider.icon('add','assets/img/ic_add_24px.svg',24);
 
 
 

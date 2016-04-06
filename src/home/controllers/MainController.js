@@ -1,11 +1,13 @@
 (function(){
-    var MainController = function($scope,$log,ProjectsFactory,$rootScope,$mdSidenav)
+    var MainController = function($scope,$log,ProjectsFactory,$rootScope,$mdSidenav,$mdToast)
     {
 
-        $scope.listProjects=null;
-        $scope.selected=null ;
+
+        $rootScope.selectedProject=null ;
         searchProject :string = '';
         tabIndex:number=1;
+
+
         function all()
         {
             ProjectsFactory.getAll().then(function (response) {
@@ -21,9 +23,19 @@
         };
 
         $scope.selectProject = function(obj) {
-            $scope.selected=obj;
+            $rootScope.selectedProject=obj;
+            openToast(obj.nameProject+" was selected");
 
         };
+        function openToast(msg)
+        {
+          $mdToast.show(
+              $mdToast.simple()
+                  .textContent(msg)
+                  .position('top right')
+                  .hideDelay(3000)
+          );
+        }
 
 
 
@@ -31,7 +43,7 @@
 
 
     };
-    MainController.$inject=['$scope','$log','ProjectsFactory','$rootScope','$mdSidenav'];
+    MainController.$inject=['$scope','$log','ProjectsFactory','$rootScope','$mdSidenav','$mdToast'];
     angular.module('App').controller('MainController',MainController);
 }
 ());

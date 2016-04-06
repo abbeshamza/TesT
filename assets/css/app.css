@@ -11,3 +11,10 @@ md-toolbar h1 {
     margin: auto;
 
 }
+.scrollable-nav-content {
+    position:relative;
+    top :0px;
+    margin-right: 10px;
+    width: 100%;
+    overflow: auto;
+}
